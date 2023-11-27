@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $title }}</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
 <div class="d-flex vh-100">
@@ -43,6 +44,8 @@
         @yield('content')
     </main>
 </div>
+<script src="./js/jquery3.7.1.js"></script>
+<script src="./js/bootstrap.bundle.js"></script>
 @if(isset($scripts))
     {{ $scripts }}
 @endif
