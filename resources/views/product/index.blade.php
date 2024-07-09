@@ -140,10 +140,6 @@
         </div>
     @endsection
     <x-slot name="scripts">
-    <script src="./js/other/addAttributes.js"></script>
-    <script src="./js/product/ajax/show.js"></script>
-    <script src="./js/product/delete.js"></script>
-    <script src="./js/product/add.js"></script>
-    <script src="./js/product/update.js"></script>
+        @vite(['resources/js/other/addAttributes.js', 'resources/js/product/ajax/show.js','resources/js/product/delete.js', 'resources/js/product/add.js', 'resources/js/product/update.js'])
     </x-slot>
 </x-app-layout>

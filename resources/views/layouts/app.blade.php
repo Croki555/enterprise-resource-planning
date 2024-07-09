@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="baseUrl" content="{{ route('home') }}">
     <title>{{ $title }}</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/app.css">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 <div class="d-flex vh-100">
@@ -25,27 +25,10 @@
         </ul>
     </aside>
     <main class="main flex-grow-1 h-100">
-        <header class="header bg-white">
-            <div class="container-fluid header__container">
-                <nav class="navbar bg-white p-0">
-                    <ul class="nav gap-4">
-                        <li class="nav-item">
-                            <a href="{{ route('home') }}"
-                               class="nav-link active px-0 py-3 text-uppercase">Продукты
-                            </a>
-                        </li>
-                    </ul>
-                    <div>
-                        <h3 class="user-name m-0">{{ config('products.name') }}</h3>
-                    </div>
-                </nav>
-            </div>
-        </header>
+        @include('partials.header')
         @yield('content')
     </main>
 </div>
-<script src="./js/jquery3.7.1.js"></script>
-<script src="./js/bootstrap.bundle.js"></script>
 @if(isset($scripts))
     {{ $scripts }}
 @endif

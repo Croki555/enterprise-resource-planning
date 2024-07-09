@@ -6,14 +6,14 @@
                     @csrf
                     <h2 class="mb-3">Авторизация</h2>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="name@example.com" value="{{ old('email') }}">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="name@example.com" value="{{ old('email') }}" required>
                         <label for="email">Email address</label>
                         @error('email')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password">
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password" required>
                         <label for="password">Password</label>
                         @error('password')
                         <span class="invalid-feedback">{{ $message }}</span>
